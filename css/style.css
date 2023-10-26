@@ -1,0 +1,21 @@
+.image-container {
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url('../img/desktop-image.png');
+}
+
+.image-container img {
+  max-width: 100%;
+}
+
+body {
+  height: 100vh;
+  overflow-y: scroll;
+}
+
+/* For mobile */
+@media (max-width: 767px) {
+  .image-container {
+    background-image: url('../img/mobile-image.png');
+  }
+}
