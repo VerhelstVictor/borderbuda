@@ -1,4 +1,4 @@
-# My Scrolling Website
+# Border Buda
 
 This is a single-page website that displays a long image that you can scroll. The website has a desktop version and a mobile version of the image, which are switched using CSS media queries.
 
