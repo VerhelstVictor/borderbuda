@@ -1,34 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PDF Viewer</title>
-    <style>
-        body, html {
-            margin: 0;
-            padding: 0;
-            height: 100%;
-            overflow: hidden;
-        }
-        #pdf-container {
-            width: 100%;
-            height: 100%;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <title>Border Buda</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
-    <div id="pdf-container">
-        <iframe src="BB-WEBSITE.pdf" frameborder="0" width="100%" height="100%" allowfullscreen></iframe>
-    </div>
-    <script>
-        document.querySelector('#pdf-container iframe').requestFullscreen = document.querySelector('#pdf-container iframe').requestFullscreen || document.querySelector('#pdf-container iframe').webkitRequestFullScreen || document.querySelector('#pdf-container iframe').mozRequestFullScreen;
-        
-        if (document.querySelector('#pdf-container iframe').requestFullscreen) {
-            document.querySelector('#pdf-container').addEventListener('click', () => {
-                document.querySelector('#pdf-container iframe').requestFullscreen();
-            });
-        }
-    </script>
+  <div class="image-container"></div>
+  <script src="js/script.js"></script>
 </body>
+
 </html>
