@@ -1,36 +1,34 @@
 <!DOCTYPE html>
-<html lang="nl">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Landingspagina</title>
+    <title>PDF Viewer</title>
     <style>
-        body {
+        body, html {
             margin: 0;
             padding: 0;
+            height: 100%;
             overflow: hidden;
         }
-        .container {
+        #pdf-container {
             width: 100%;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: #f0f0f0;
-        }
-        .pdf-container {
-            width: 100%;
-            max-width: 480px; /* Beperk de maximale breedte */
             height: 100%;
-            overflow: auto; /* Voeg scrollbars toe als nodig */
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="pdf-container">
-            <object data="BB-WEBSITEMOBILE.pdf" type="application/pdf" width="100%" height="2540"></object>
-        </div>
+    <div id="pdf-container">
+        <iframe src="BB-WEBSITE.pdf" frameborder="0" width="100%" height="100%" allowfullscreen></iframe>
     </div>
+    <script>
+        document.querySelector('#pdf-container iframe').requestFullscreen = document.querySelector('#pdf-container iframe').requestFullscreen || document.querySelector('#pdf-container iframe').webkitRequestFullScreen || document.querySelector('#pdf-container iframe').mozRequestFullScreen;
+        
+        if (document.querySelector('#pdf-container iframe').requestFullscreen) {
+            document.querySelector('#pdf-container').addEventListener('click', () => {
+                document.querySelector('#pdf-container iframe').requestFullscreen();
+            });
+        }
+    </script>
 </body>
 </html>
