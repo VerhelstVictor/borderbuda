@@ -3,52 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Landing Page</title>
+    <title>PDF Viewer</title>
     <style>
-        body {
+        body, html {
             margin: 0;
             padding: 0;
+            height: 100%;
             overflow: hidden;
         }
-
         #pdf-container {
-            width: 100vw;
-            height: 100vh;
-            overflow: auto; /* Enable scrolling within the container */
-        }
-
-        object {
-            width: 100%; /* Width of the PDF container */
-            height: 5900px; /* Set the height of your PDF here */
-        }
-
-        @media (max-width: 480px) {
-            /* Stijlregels voor mobiele apparaten met een maximale breedte van 480px */
-            /* Pas hier de stijl van je PDF aan, zoals de breedte, marges, enz. */
-            
-            /* Voeg een tweede PDF toe voor mobiele weergave */
-            #pdf-container {
-                height: auto; /* Zorg ervoor dat de container de hoogte van de inhoud aanpast */
-            }
-
-            object.mobile-pdf {
-                width: 100%; /* Breedte van het mobiele PDF-bestand */
-                height: auto; /* Hoogte wordt automatisch aangepast aan de inhoud */
-            }
+            width: 100%;
+            height: 100%;
         }
     </style>
 </head>
 <body>
     <div id="pdf-container">
-        <!-- Desktop PDF-bestand -->
-        <object data="BB-WEBSITE.pdf" type="application/pdf">
-            Your browser does not support PDFs. You can <a href="BB-WEBSITE.pdf">download the PDF</a> instead.
-        </object>
-
-        <!-- Mobiel PDF-bestand (toegevoegd voor mobiele weergave) -->
-        <object class="mobile-pdf" data="mobile.pdf" type="application/pdf">
-            Your browser does not support PDFs. You can <a href="BB-WEBSITEMOBILE.pdf">download the PDF</a> instead.
-        </object>
+        <iframe src="BB-WEBSITE.pdf" frameborder="0" width="100%" height="100%" allowfullscreen></iframe>
     </div>
+    <script>
+        document.querySelector('#pdf-container iframe').requestFullscreen = document.querySelector('#pdf-container iframe').requestFullscreen || document.querySelector('#pdf-container iframe').webkitRequestFullScreen || document.querySelector('#pdf-container iframe').mozRequestFullScreen;
+        
+        if (document.querySelector('#pdf-container iframe').requestFullscreen) {
+            document.querySelector('#pdf-container').addEventListener('click', () => {
+                document.querySelector('#pdf-container iframe').requestFullscreen();
+            });
+        }
+    </script>
 </body>
 </html>
