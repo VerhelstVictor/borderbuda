@@ -21,17 +21,33 @@
             width: 100%; /* Width of the PDF container */
             height: 5900px; /* Set the height of your PDF here */
         }
-        @media (max-width: 480px) {
-          /* Stijlregels voor mobiele apparaten met een maximale breedte van 480px */
-          /* Pas hier de stijl van je PDF aan, zoals de breedte, marges, enz. */
-        }
 
+        @media (max-width: 480px) {
+            /* Stijlregels voor mobiele apparaten met een maximale breedte van 480px */
+            /* Pas hier de stijl van je PDF aan, zoals de breedte, marges, enz. */
+            
+            /* Voeg een tweede PDF toe voor mobiele weergave */
+            #pdf-container {
+                height: auto; /* Zorg ervoor dat de container de hoogte van de inhoud aanpast */
+            }
+
+            object.mobile-pdf {
+                width: 100%; /* Breedte van het mobiele PDF-bestand */
+                height: auto; /* Hoogte wordt automatisch aangepast aan de inhoud */
+            }
+        }
     </style>
 </head>
 <body>
     <div id="pdf-container">
+        <!-- Desktop PDF-bestand -->
         <object data="BB-WEBSITE.pdf" type="application/pdf">
             Your browser does not support PDFs. You can <a href="BB-WEBSITE.pdf">download the PDF</a> instead.
+        </object>
+
+        <!-- Mobiel PDF-bestand (toegevoegd voor mobiele weergave) -->
+        <object class="mobile-pdf" data="BB-WEBSITEMOBILE.pdf" type="application/pdf">
+            Your browser does not support PDFs. You can <a href="BB-WEBSITEMOBILE.pdf">download the PDF</a> instead.
         </object>
     </div>
 </body>
