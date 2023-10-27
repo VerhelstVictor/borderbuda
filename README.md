@@ -15,7 +15,3 @@ The project has the following files:
 ## Usage
 
 To view the website, open the `index.html` file in a web browser. The website will display the long image, which you can scroll up and down. The image will switch between the desktop and mobile versions based on the size of the screen.
-
-## Credits
-
-This website was created by [Your Name].
